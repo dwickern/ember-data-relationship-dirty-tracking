@@ -8,17 +8,11 @@ module.exports = {
     sourceType: 'module',
     requireConfigFile: false,
     babelOptions: {
-      plugins: [
-        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
-      ],
+      plugins: [['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }]],
     },
   },
   plugins: ['ember'],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:ember/recommended', 'plugin:prettier/recommended'],
   env: {
     browser: true,
   },
@@ -38,6 +32,7 @@ module.exports = {
         './config/**/*.js',
         './tests/dummy/config/**/*.js',
       ],
+      excludedFiles: ['./tests/dummy/config/deprecation-workflow.js'],
       parserOptions: {
         sourceType: 'script',
       },

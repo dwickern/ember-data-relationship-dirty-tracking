@@ -3,10 +3,32 @@ import {
   setupRenderingTest as upstreamSetupRenderingTest,
   setupTest as upstreamSetupTest,
 } from 'ember-qunit';
+import Pretender from 'pretender';
 
 // This file exists to provide wrappers around ember-qunit's / ember-mocha's
 // test setup functions. This way, you can easily extend the setup that is
 // needed per test type.
+
+function setupStore(hooks) {
+  hooks.beforeEach(function () {
+    this.store = this.owner.lookup('service:store');
+  });
+
+  hooks.afterEach(function () {
+    this.store = undefined;
+  });
+}
+
+function setupPretender(hooks) {
+  hooks.beforeEach(function () {
+    this.server = new Pretender();
+  });
+
+  hooks.afterEach(function () {
+    this.server.shutdown();
+    this.server = undefined;
+  });
+}
 
 function setupApplicationTest(hooks, options) {
   upstreamSetupApplicationTest(hooks, options);
@@ -37,6 +59,8 @@ function setupTest(hooks, options) {
   upstreamSetupTest(hooks, options);
 
   // Additional setup for unit tests can be done here.
+  setupStore(hooks);
+  setupPretender(hooks);
 }
 
 export { setupApplicationTest, setupRenderingTest, setupTest };
