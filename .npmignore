@@ -16,6 +16,7 @@
 /.git/
 /.github/
 /.gitignore
+/.idea/
 /.prettierignore
 /.prettierrc.js
 /.stylelintignore
