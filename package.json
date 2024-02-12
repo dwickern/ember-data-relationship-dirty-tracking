@@ -5,9 +5,12 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwickern/ember-data-relationship-dirty-tracking.git"
+  },
   "license": "MIT",
-  "author": "",
+  "author": "Derek Wickern <dwickern@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
