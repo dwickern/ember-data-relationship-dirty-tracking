@@ -1,6 +1,6 @@
 {
   "name": "ember-data-relationship-dirty-tracking",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "Dirty tracking for ember-data relationships",
   "keywords": [
     "ember-addon"
