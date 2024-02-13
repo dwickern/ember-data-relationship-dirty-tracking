@@ -82,7 +82,7 @@
   "peerDependencies": {
     "ember-data": ">=3.28.0",
     "ember-data-model-fragments": ">=6.0.0",
-    "ember-source": "^4.0.0"
+    "ember-source": "^3.28.0 || ^4.0.0"
   },
   "peerDependenciesMeta": {
     "ember-data-model-fragments": {
